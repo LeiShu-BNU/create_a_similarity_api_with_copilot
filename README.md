@@ -187,3 +187,39 @@ def calculate_similarity(sentence1, sentence2):
     return float(similarity)
 ```
 
+## 容器化部署
+
+![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/08effc42-3bbd-4c76-bf2b-9390891043b0)
+GitHub Copilot
+创建一个Dockerfile来部署你的Flask应用程序，你需要包含Python环境和所有必要的依赖项。以下是一个基本的Dockerfile示例：
+```
+# 使用官方Python镜像作为基础镜像
+FROM python:3.8-slim-buster
+
+# 设置工作目录
+WORKDIR /app
+
+# 将当前目录内容复制到容器的/app目录中
+COPY . /app
+
+# 安装必要的包
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 暴露端口，使得Flask应用可以被外部访问
+EXPOSE 5000
+
+# 运行app.py
+CMD ["python", "app.py"]
+
+```
+
+请确保你的项目根目录中有一个requirements.txt文件，列出了所有的Python依赖项。你可以通过运行pip freeze > requirements.txt命令来生成这个文件。
+
+然后，你可以使用以下命令来构建和运行Docker容器：
+```
+docker build -t my-flask-app .
+docker run -p 5000:5000 my-flask-app
+```
+
+这将构建一个名为my-flask-app的Docker镜像，并运行一个新的容器，将容器的5000端口映射到主机的5000端口。
+
