@@ -1,4 +1,4 @@
-![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/d93bdace-b6e8-4133-b9e6-716d033db448)# How to create a similarity api with copilot
+# How to create a similarity api with copilot
 
 Copilot 以及 copilot chat可以快速提升生产力。该项目在copilot chat的提示下完成了一个向量相似度接口。
 向量相似度在搜索推荐中至关重要，将它做成接口可以保证业务的稳定性和较快的响应速度。在学习了copilot chat的开发方法后，在copilot的协作下，可以快速开发相似度接口。
