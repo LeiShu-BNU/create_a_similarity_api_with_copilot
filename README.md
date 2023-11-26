@@ -158,7 +158,7 @@ response = requests.post(url, json=data)
 
 # 打印响应
 print(response.json())
-'''
+```
 
 请根据实际情况修改上述代码中的URL和参数。
 
@@ -166,7 +166,7 @@ print(response.json())
 ![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/b11f5fbc-4d03-42e7-a851-99566b855ff6)
 
 结果：
-'''
+```
 def calculate_similarity(sentence1, sentence2):
 
     # API的URL
