@@ -35,7 +35,7 @@ def vector_similarity(vec1, vec2):
 这个函数可以计算两个向量的余弦相似度，这是一种常用的向量相似度度量。
 
 
-在对第一个提问的回答中，copilot chat不仅拆分了必要的步骤，并且输出了核心步骤的代码。
+我的评价：在对第一个提问的回答中，copilot chat不仅拆分了必要的步骤，并且输出了核心步骤的代码。
 
 ## 补充细节
 
@@ -80,6 +80,8 @@ if __name__ == '__main__':
 ```
 
 这个Flask应用定义了一个POST路由'/similarity'，它接受一个包含两个向量的JSON请求，计算这两个向量的相似度，然后返回结果。
+
+我的评价：copilot成功搭建了flask框架。并将前面步骤中的计算相似度融合进了flask框架。
 
 ## 进一步提示，完善流程
 
@@ -130,9 +132,12 @@ if __name__ == '__main__':
 
 这个修改后的Flask应用现在接受两个句子作为输入，使用sentence_transformers模型将它们转换为向量，然后计算这两个向量的相似度。
 
+我的评价：copilot调用了指定的包，获取向量。且把它加入了之前的步骤。
+
 ## 使用inline chat功能，修改指定行
 ![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/25deb80e-0fea-408a-a6f5-241759eb6a60)
 
+我的评价：inline chat方法比较方便，选定存在问题的行，右键→ copilot → start inline chat就能让它按要求修改这些代码。
 
 ## 编写测试脚本
 ![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/26eba198-a0bd-4808-be43-feeee123a8ec)
@@ -162,30 +167,8 @@ print(response.json())
 
 请根据实际情况修改上述代码中的URL和参数。
 
-## 函数化
-![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/b11f5fbc-4d03-42e7-a851-99566b855ff6)
+我的评价：对接口编写测试脚本这样重复性高的活，交给copilot再合适不过了。
 
-结果：
-```
-def calculate_similarity(sentence1, sentence2):
-
-    # API的URL
-    url = "http://localhost:5000/similarity"
-
-    # 需要传递的参数
-    data = {
-        "sentence1": sentence1,
-        "sentence2": sentence2
-    }
-
-    # 发送POST请求
-    response = requests.post(url, json=data)
-
-    # 获取相似度结果
-    similarity = response.json().get("similarity")
-
-    return float(similarity)
-```
 
 ## 容器化部署
 
@@ -222,4 +205,9 @@ docker run -p 5000:5000 my-flask-app
 ```
 
 这将构建一个名为my-flask-app的Docker镜像，并运行一个新的容器，将容器的5000端口映射到主机的5000端口。
+
+![image](https://github.com/LeiShu-BNU/create_a_similarity_api_with_copilot/assets/81801688/49bc1353-1e38-49e7-bea7-eaec496b78c6)
+
+
+我的评价：对于如何容器化部署，教程非常详细。在我进一步提问dockerfile的命名和路径问题后也能接着解释。
 
