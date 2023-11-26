@@ -145,7 +145,7 @@ if __name__ == '__main__':
 GitHub Copilot
 首先，我们需要确定API的完整URL，HTTP方法（GET，POST等），以及需要传递的参数。然后，我们可以使用Python的requests库来调用API。
 
-以下是一个基本的示例，假设API的URL是http://localhost:5000/similarity，我们使用POST方法，并传递JSON格式的参数。
+以下是一个基本的示例，假设API的URL是"http://localhost:5000/similarity"，我们使用POST方法，并传递JSON格式的参数。
 ```
 import requests
 
