@@ -16,7 +16,7 @@ GitHub Copilot：
 返回相似度。
 以下是这个过程的Python代码：
 
-'''
+```
 import numpy as np
 
 def vector_similarity(vec1, vec2):
@@ -30,7 +30,7 @@ def vector_similarity(vec1, vec2):
     similarity = dot_product / (norm_a * norm_b)
     
     return similarity
-'''
+```
 
 这个函数可以计算两个向量的余弦相似度，这是一种常用的向量相似度度量。
 
@@ -49,7 +49,7 @@ GitHub Copilot：
 定义一个路由，该路由对应你的向量相似度函数。
 在该路由的函数中，获取请求中的两个向量，调用向量相似度函数，然后返回结果。
 以下是这个过程的Python代码：
-'''
+```
 from flask import Flask, request
 import numpy as np
 
@@ -77,7 +77,7 @@ def similarity():
 
 if __name__ == '__main__':
     app.run(debug=True)
-'''
+```
 
 这个Flask应用定义了一个POST路由'/similarity'，它接受一个包含两个向量的JSON请求，计算这两个向量的相似度，然后返回结果。
 
@@ -89,7 +89,7 @@ GitHub Copilot：
 要使用sentence_transformers库加载模型并获取向量，你需要先安装这个库，然后在你的代码中导入它。你可以使用SentenceTransformer类的encode方法来获取句子的向量表示。
 
 以下是如何修改你的代码来实现这个功能：
-'''
+```
 from flask import Flask, request
 from sentence_transformers import SentenceTransformer
 import numpy as np
@@ -126,7 +126,7 @@ def similarity():
 
 if __name__ == '__main__':
     app.run(debug=True)
-'''
+```
 
 这个修改后的Flask应用现在接受两个句子作为输入，使用sentence_transformers模型将它们转换为向量，然后计算这两个向量的相似度。
 
@@ -141,7 +141,7 @@ GitHub Copilot
 首先，我们需要确定API的完整URL，HTTP方法（GET，POST等），以及需要传递的参数。然后，我们可以使用Python的requests库来调用API。
 
 以下是一个基本的示例，假设API的URL是http://localhost:5000/similarity，我们使用POST方法，并传递JSON格式的参数。
-'''
+```
 import requests
 
 # API的URL
@@ -185,5 +185,5 @@ def calculate_similarity(sentence1, sentence2):
     similarity = response.json().get("similarity")
 
     return float(similarity)
-'''
+```
 
